@@ -3,82 +3,125 @@ import sys
 import asyncio
 import requests
 from xml.etree import ElementTree
+from rich.logging import RichHandler
+import logging 
+
+log_file="crawler_output.log"
+logging.basicConfig(
+    level= logging.INFO,
+    format= "%(message)s",
+    datefmt="[%X]",
+    handlers=[
+        RichHandler(rich_tracebacks=True,show_path=False),
+        logging.FileHandler(log_file, mode="w")
+    ]
+)
+logger= logging.getLogger("crawler")
+
+__location__ = os.path.dirname(os.path.abspath(__file__))
+print(f"Location:{__location__}")
+__output__ = os.path.join(__location__, "output")
+print(f"Output:{__output__}")
+
+# Append parent directory to system path
+parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print(f"Parent directory:{parent_dir}")
+sys.path.append(parent_dir)
+
 from typing import List
 from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 
-# Define paths
-__location__ = os.path.dirname(os.path.abspath(__file__))
-__output__ = os.path.join(__location__, "output")
-parent_dir = os.path.join(__location__, "output")
-sys.path.append(parent_dir)
-
-
-# Function to crawl URLs in parallel
 async def crawl_parallel(urls: List[str], max_concurrent: int = 3):
-    
+    logger.info("\n=== Parallel Crawling ===")
+
+    # Minimal browser config
     browser_config = BrowserConfig(
-        headless=False,
-        verbose=False,
-        extra_args=["--disable-dev-shm-usage", "--no-sandbox"],
+        headless=True,
+        verbose=False, 
+        extra_args=["--disable-gpu", "--disable-dev-shm-usage", "--no-sandbox"],
+    )
+    crawl_config = CrawlerRunConfig(
+        cache_mode=CacheMode.ENABLED,
+        only_text=True,
+        remove_forms=True,
     )
 
-    crawl_config = CrawlerRunConfig(cache_mode=CacheMode.BYPASS)
+    # Create the crawler instance
     crawler = AsyncWebCrawler(config=browser_config)
-    
-    # Manually manage crawler context (alternatively use `async with`)
     await crawler.start()
+
     try:
         success_count = 0
         fail_count = 0
+        results=None
         for i in range(0, len(urls), max_concurrent):
-            batch = urls[i:i + max_concurrent]
+            batch = urls[i : i + max_concurrent]
             tasks = []
 
             for j, url in enumerate(batch):
+                # Unique session_id per concurrent sub-task
                 session_id = f"parallel_session_{i + j}"
                 task = crawler.arun(url=url, config=crawl_config, session_id=session_id)
                 tasks.append(task)
 
+
             results = await asyncio.gather(*tasks, return_exceptions=True)
+            
             for url, result in zip(batch, results):
                 if isinstance(result, Exception):
-                    print(f"Error crawling {url}: {result}")
+                    logger.error(f"Error crawling {url}: {result}")
                     fail_count += 1
                 elif result.success:
+                    logger.info(f"Successfully crawled {url}")
                     success_count += 1
                 else:
+                    logger.warning(f"Failed to crawl {url}")
                     fail_count += 1
-        print(f"Successfully crawled {success_count} URLs. Failed: {fail_count}.")
+
+        logger.info(f"\nSummary:")
+        logger.info(f"  - Successfully crawled: {success_count}")
+        logger.info(f"  - Failed: {fail_count}")
+        logger.info(f"First result: {results[0].markdown_v2.raw_markdown}")
+
+
     finally:
+        logger.info("\nClosing crawler...")
         await crawler.close()
 
-
-# Function to fetch URLs from the Pydantic AI sitemap
-def get_pydantic_ai_docs_urls(url:str="https://ai.pydantic.dev/sitemap.xml"):
+def get_pydantic_ai_docs_urls():
+    """
+    Fetches all URLs from the Pydantic AI documentation.
+    Uses the sitemap (https://ai.pydantic.dev/sitemap.xml) to get these URLs.
     
+    Returns:
+        List[str]: List of URLs
+    """            
+    sitemap_url = "https://ai.pydantic.dev/sitemap.xml"
     try:
-        response = requests.get(url)
+        response = requests.get(sitemap_url)
         response.raise_for_status()
-
+        
+        # Parse the XML
         root = ElementTree.fromstring(response.content)
-        namespace = {'ns': 'https://www.sitemaps.org/schemas/sitemap/0.9'}
+        
+        # Extract all URLs from the sitemap
+        # The namespace is usually defined in the root element
+        namespace = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
         urls = [loc.text for loc in root.findall('.//ns:loc', namespace)]
+        
         return urls
-
     except Exception as e:
-        print(f"Error fetching sitemap: {e}")
-        return []
+        logger.error(f"Error fetching sitemap: {e}")
 
+        return []        
 
-# Main async entry point
 async def main():
     urls = get_pydantic_ai_docs_urls()
     if urls:
-        await crawl_parallel(urls, max_concurrent=3)
+        logger.info(f"Found {len(urls)} URLs to crawl")
+        await crawl_parallel(urls, max_concurrent=10)
     else:
-        print("No URLs found to crawl.")
+        logger.warning("No URLs found to crawl")  
 
-
-# Script entry point
 if __name__ == "__main__":
     asyncio.run(main())
