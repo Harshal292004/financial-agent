@@ -1,0 +1,106 @@
+[15:51:37] Found 49 URLs to crawl
+[15:51:37] 
+Start Crawling in parallel
+[15:51:44] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:51:44] Successfully crawled https://ai.pydantic.dev/
+[15:51:44] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:51:44] Successfully crawled https://ai.pydantic.dev/agents/
+[15:51:44] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:51:44] Successfully crawled https://ai.pydantic.dev/contributing/
+[15:52:09] Failed to crawl https://ai.pydantic.dev/dependencies/
+[15:52:09] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:09] Successfully crawled https://ai.pydantic.dev/graph/
+[15:52:09] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:09] Successfully crawled https://ai.pydantic.dev/help/
+[15:52:35] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:35] Successfully crawled https://ai.pydantic.dev/install/
+[15:52:35] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:35] Successfully crawled https://ai.pydantic.dev/logfire/
+[15:52:35] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:35] Successfully crawled https://ai.pydantic.dev/message-history/
+[15:52:41] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:41] Successfully crawled https://ai.pydantic.dev/models/
+[15:52:41] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:41] Successfully crawled https://ai.pydantic.dev/multi-agent-applications/
+[15:52:41] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:41] Successfully crawled https://ai.pydantic.dev/results/
+[15:52:49] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:49] Successfully crawled https://ai.pydantic.dev/testing-evals/
+[15:52:49] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:49] Successfully crawled https://ai.pydantic.dev/tools/
+[15:52:49] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:49] Successfully crawled https://ai.pydantic.dev/troubleshooting/
+[15:52:54] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:54] Successfully crawled https://ai.pydantic.dev/api/agent/
+[15:52:54] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:54] Successfully crawled https://ai.pydantic.dev/api/exceptions/
+[15:52:54] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:52:54] Successfully crawled https://ai.pydantic.dev/api/format_as_xml/
+[15:53:00] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:53:00] Successfully crawled https://ai.pydantic.dev/api/messages/
+[15:53:00] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:53:00] Successfully crawled https://ai.pydantic.dev/api/result/
+[15:53:00] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:53:00] Successfully crawled https://ai.pydantic.dev/api/settings/
+[15:53:21] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:53:21] Successfully crawled https://ai.pydantic.dev/api/tools/
+[15:53:21] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:53:21] Successfully crawled https://ai.pydantic.dev/api/usage/
+[15:53:21] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:53:21] Successfully crawled https://ai.pydantic.dev/api/models/anthropic/
+[15:53:37] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:53:37] Successfully crawled https://ai.pydantic.dev/api/models/base/
+[15:53:37] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:53:37] Successfully crawled https://ai.pydantic.dev/api/models/function/
+[15:53:37] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:53:37] Successfully crawled https://ai.pydantic.dev/api/models/gemini/
+[15:53:58] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:53:58] Successfully crawled https://ai.pydantic.dev/api/models/groq/
+[15:53:58] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:53:58] Successfully crawled https://ai.pydantic.dev/api/models/mistral/
+[15:53:58] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:53:58] Successfully crawled https://ai.pydantic.dev/api/models/ollama/
+[15:54:24] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:54:24] Successfully crawled https://ai.pydantic.dev/api/models/openai/
+[15:54:24] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:54:24] Successfully crawled https://ai.pydantic.dev/api/models/test/
+[15:54:24] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:54:24] Successfully crawled https://ai.pydantic.dev/api/models/vertexai/
+[15:54:43] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:54:43] Successfully crawled https://ai.pydantic.dev/api/pydantic_graph/exceptions/
+[15:54:43] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:54:43] Successfully crawled https://ai.pydantic.dev/api/pydantic_graph/graph/
+[15:54:43] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:54:43] Successfully crawled https://ai.pydantic.dev/api/pydantic_graph/mermaid/
+[15:54:59] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:54:59] Successfully crawled https://ai.pydantic.dev/api/pydantic_graph/nodes/
+[15:54:59] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:54:59] Successfully crawled https://ai.pydantic.dev/api/pydantic_graph/state/
+[15:54:59] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:54:59] Successfully crawled https://ai.pydantic.dev/examples/
+[15:55:22] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:55:22] Successfully crawled https://ai.pydantic.dev/examples/bank-support/
+[15:55:22] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:55:22] Successfully crawled https://ai.pydantic.dev/examples/chat-app/
+[15:55:22] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:55:22] Successfully crawled https://ai.pydantic.dev/examples/flight-booking/
+[15:55:32] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:55:32] Successfully crawled https://ai.pydantic.dev/examples/pydantic-model/
+[15:55:32] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:55:32] Successfully crawled https://ai.pydantic.dev/examples/question-graph/
+[15:55:32] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:55:32] Successfully crawled https://ai.pydantic.dev/examples/rag/
+[15:55:52] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:55:52] Successfully crawled https://ai.pydantic.dev/examples/sql-gen/
+[15:55:52] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:55:52] Successfully crawled https://ai.pydantic.dev/examples/stream-markdown/
+[15:55:52] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:55:52] Successfully crawled https://ai.pydantic.dev/examples/stream-whales/
+[15:56:02] Cleaned content saved to /home/harshal/Desktop/financial_agents/output/cleaned_document.txt
+[15:56:02] Successfully crawled https://ai.pydantic.dev/examples/weather-agent/
+[15:56:02] 
+Summary:
+[15:56:02]   - Successfully crawled: 48
+[15:56:02]   - Failed: 1
+[15:56:02] 
+Closing crawler...
