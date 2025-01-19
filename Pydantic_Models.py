@@ -1,4 +1,5 @@
-from typing import List, Annotated
+from dataclasses import dataclass
+from typing import List, Annotated,Dict,Any
 from pydantic import BaseModel, Field
 
 
@@ -29,3 +30,17 @@ class ExpenseCategories(BaseModel):
     savings: Annotated[str, Field(description="Contributions to savings or investments")]
     miscellaneous: Annotated[List[str], Field(description="Other uncategorized expenses")]
 
+
+
+@dataclass
+class ProcessedChunk:
+    """
+    Class for processing the chunk 
+    """
+    url:str
+    chunk_number:int
+    title:str
+    summary:str
+    content:str
+    metadata:Dict[str,Any]
+    embedding:List[float]  
